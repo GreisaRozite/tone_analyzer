@@ -8,4 +8,4 @@
 
 **Decision**: I chose `GoEmotions`, but collapsed it to the six basic Ekman emotions (anger, disgust, fear, joy, sadness, surprise). Therefore making it less complex (manageable number of classes), while retaining accuracy, as text is human-labeled and realistic
 
-
+*also chose to include 'neutral', however, it was downsized to keep classes balanced and avoid majority-class bias ('neutral' makes up more than a third of training data sentences)*
