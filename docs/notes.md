@@ -6,7 +6,6 @@
 - `dair-ai/emotion`: 6 emotions, automatically labeled tweets based on hashtags. Good sample and label size for this project. However, after reading some, the labels seemed very innacurate
 - `TweetEval`: 4 emotions, human labeled, but not enough breadth, heavy slang usage
 
-**Decision** 
-I chose `GoEmotions`, but collapsed it to the six basic Ekman emotions (anger, disgust, fear, joy, sadness, surprise). Therefore making it less complex (manageable number of classes), while retaining accuracy, as text is human-labeled and realistic
+**Decision**: I chose `GoEmotions`, but collapsed it to the six basic Ekman emotions (anger, disgust, fear, joy, sadness, surprise). Therefore making it less complex (manageable number of classes), while retaining accuracy, as text is human-labeled and realistic
 
 
