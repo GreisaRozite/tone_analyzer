@@ -6,8 +6,7 @@ Created on Wed Nov 11 21:26:35 2026
 
 """
 
-from datasets import load_dataset, concatenate_datasets
-from collections import Counter
+from datasets import load_dataset, concatenate_datasets, DatasetDict
 
 raw_data = load_dataset('google-research-datasets/go_emotions', 'simplified')
 
@@ -32,7 +31,7 @@ def one_label_only(x):
 
 emotion_data=target_data.filter(one_label_only)
 
-neutral_id=27
+neutral_id=names.index('neutral')
 
 def filter_by_neutral_only(x):
     return all(label == neutral_id for label in x['labels'])
@@ -63,16 +62,7 @@ validation=validation.map(simplify).remove_columns(['labels', 'id'])
 
 test=test.map(simplify).remove_columns(['labels', 'id'])
 
-print(Counter(train['emotion']))
-
-print(Counter(validation['emotion']))
-
-print(Counter(test['emotion']))
-
-
-
-
-
+DatasetDict({'train': train, 'validation': validation, 'test': test}).save_to_disk('data/emotions7')
 
 
 
