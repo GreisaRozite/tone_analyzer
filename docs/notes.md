@@ -17,6 +17,6 @@
 - `test` {'anger': 131, 'sadness': 102, 'neutral': 100, 'joy': 93, 'surprise': 87, 'disgust': 76, 'fear': 65}
 
 **Analysis**: The biggest class (anger) is only approx. 2.38 times the smallest (fear) for training. 
-A classifier learns from what it sees most often, so proportional classes is ideal. 
-The more lopsided the data, the more the model leans towards the big class. In this training data, the imbalance is mild (2.38x), 
-so there is no need to balance it with additional tools.
+A classifier learns from what it sees most often, so should aim for proportional classes.
+The more lopsided the data, the more the model will lean towards the big class. In my reducted training data (emotions7), the imbalance is mild (2.38x), 
+so there is no need to balance it with additional tools
