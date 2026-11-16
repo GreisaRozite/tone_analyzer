@@ -49,3 +49,35 @@ train = concatenate_datasets ([emotion_data['train'], neutral_data['train']]).sh
 validation = concatenate_datasets ([emotion_data['validation'], neutral_data['validation']]).shuffle(seed=42)
 
 test = concatenate_datasets ([emotion_data['test'], neutral_data['test']]).shuffle(seed=42)
+
+def simplify(x):
+    x['label'] = x['labels'][0]
+    #removes nesting since only one emotion remains
+    x['emotion'] = names[x['labels'][0]]
+    return x
+
+train=train.map(simplify).remove_columns(['labels', 'id'])
+
+validation=validation.map(simplify).remove_columns(['labels', 'id'])
+
+test=test.map(simplify).remove_columns(['labels', 'id'])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
