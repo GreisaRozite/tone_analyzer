@@ -20,3 +20,9 @@
 A classifier learns from what it sees most often, so should aim for proportional classes.
 The more lopsided the data, the more the model will lean towards the big class. In my reducted training data (emotions7), the imbalance is mild (2.38x), 
 so there is no need to balance it with additional tools
+
+## The pipeline
+
+- `TfidfVectorizer`: sentence -> list of numbers based on the words it contains. Common words ('the', 'and') count for less, distinctive words for more. *TF-IDF stands for Term Frequency (how often each word appears in this sentence), Inverse Document Frequency (how rare the word is across all sentences)
+- `LogisticRegression` is the learning part. Looks at the vectorized numbers and correct answers
+- `make_pipeline` chains them together. vectorizer output -> classifier
