@@ -7,6 +7,7 @@ Created on Wed Nov 11 21:26:35 2026
 """
 
 from datasets import load_dataset, concatenate_datasets
+from collections import Counter
 
 raw_data = load_dataset('google-research-datasets/go_emotions', 'simplified')
 
@@ -62,9 +63,11 @@ validation=validation.map(simplify).remove_columns(['labels', 'id'])
 
 test=test.map(simplify).remove_columns(['labels', 'id'])
 
+print(Counter(train['emotion']))
 
+print(Counter(validation['emotion']))
 
-
+print(Counter(test['emotion']))
 
 
 
