@@ -26,3 +26,9 @@ X_test = test['text'] # inputs
 Y_test = test['emotion'] # outputs
 
 model = make_pipeline(TfidfVectorizer(), LogisticRegression(max_iter=1000))
+
+model.fit (X_train, Y_train)
+
+predictions = model.predict(X_validation)
+
+print(classification_report(Y_validation, predictions))

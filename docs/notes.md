@@ -26,3 +26,19 @@ so there is no need to balance it with additional tools
 - `TfidfVectorizer`: sentence -> list of numbers based on the words it contains. Common words ('the', 'and') count for less, distinctive words for more. *TF-IDF stands for Term Frequency (how often each word appears in this sentence), Inverse Document Frequency (how rare the word is across all sentences)
 - `LogisticRegression` is the learning part. Looks at the vectorized numbers and correct answers
 - `make_pipeline` chains them together. vectorizer output -> classifier
+
+## First run
+
+               precision    recall  f1-score   support
+
+       anger       0.66      0.71      0.68       109
+     disgust       0.72      0.48      0.57        61
+        fear       0.91      0.69      0.78        58
+         joy       0.82      0.76      0.79       106
+     neutral       0.40      0.62      0.49       100
+     sadness       0.79      0.79      0.79        84
+    surprise       0.76      0.61      0.68        95
+
+    accuracy                           0.67       613
+   macro avg       0.72      0.66      0.68       613
+weighted avg       0.71      0.67      0.68       613
